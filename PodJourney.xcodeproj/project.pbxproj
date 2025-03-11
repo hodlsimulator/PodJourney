@@ -16,6 +16,8 @@
 		E1E71FEB2D802C5A0025F254 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEA2D802C580025F254 /* PodcastModel.swift */; };
 		E1E71FED2D802C780025F254 /* iTunesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */; };
 		E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */; };
+		E1E71FF12D8030960025F254 /* PodcastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FF02D8030950025F254 /* PodcastRowView.swift */; };
+		E1E71FF52D8035480025F254 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1E71FF42D8035480025F254 /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		E1E71FEA2D802C580025F254 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
 		E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIService.swift; sourceTree = "<group>"; };
 		E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		E1E71FF02D8030950025F254 /* PodcastRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E71FF52D8035480025F254 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				E1E71FDE2D8020C30025F254 /* OnboardingView.swift */,
 				E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */,
 				E1E71FEA2D802C580025F254 /* PodcastModel.swift */,
+				E1E71FF02D8030950025F254 /* PodcastRowView.swift */,
 				E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */,
 				E1E71FE02D8020DB0025F254 /* Persistence.swift */,
 				E1E71FE42D80211B0025F254 /* Assets.xcassets */,
@@ -126,6 +131,7 @@
 			);
 			name = PodJourney;
 			packageProductDependencies = (
+				E1E71FF42D8035480025F254 /* NukeUI */,
 			);
 			productName = PodJourney;
 			productReference = E17F02E82D7F9C6100051CCB /* PodJourney.app */;
@@ -204,6 +210,9 @@
 			);
 			mainGroup = E17F02DF2D7F9C6100051CCB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E1E71FF32D8035480025F254 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E17F02E92D7F9C6100051CCB /* Products */;
 			projectDirPath = "";
@@ -247,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E71FEB2D802C5A0025F254 /* PodcastModel.swift in Sources */,
+				E1E71FF12D8030960025F254 /* PodcastRowView.swift in Sources */,
 				E1E71FE92D8023B40025F254 /* PodJourney.xcdatamodeld in Sources */,
 				E1E71FED2D802C780025F254 /* iTunesAPIService.swift in Sources */,
 				E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */,
@@ -581,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1E71FF32D8035480025F254 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1E71FF42D8035480025F254 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E71FF32D8035480025F254 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E1E71FE72D8023B40025F254 /* PodJourney.xcdatamodeld */ = {

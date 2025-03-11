@@ -17,9 +17,10 @@ struct Podcast: Decodable, Identifiable {
     let collectionId: Int
     let collectionName: String
     let artistName: String
-    let artworkUrl600: String?
 
-    // Conform to Identifiable
+    // Smaller thumbnail avoids large downloads
+    let artworkUrl60: String?
+
     var id: Int {
         collectionId
     }
