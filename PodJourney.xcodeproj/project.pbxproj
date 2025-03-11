@@ -13,6 +13,9 @@
 		E1E71FE32D8020F30025F254 /* PodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */; };
 		E1E71FE52D80211B0025F254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E71FE42D80211B0025F254 /* Assets.xcassets */; };
 		E1E71FE92D8023B40025F254 /* PodJourney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FE72D8023B40025F254 /* PodJourney.xcdatamodeld */; };
+		E1E71FEB2D802C5A0025F254 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEA2D802C580025F254 /* PodcastModel.swift */; };
+		E1E71FED2D802C780025F254 /* iTunesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */; };
+		E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodJourneyApp.swift; sourceTree = "<group>"; };
 		E1E71FE42D80211B0025F254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1E71FE82D8023B40025F254 /* PodJourney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodJourney.xcdatamodel; sourceTree = "<group>"; };
+		E1E71FEA2D802C580025F254 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
+		E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIService.swift; sourceTree = "<group>"; };
+		E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				E1E71FDB2D8020750025F254 /* ContentView.swift */,
+				E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */,
 				E1E71FDE2D8020C30025F254 /* OnboardingView.swift */,
+				E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */,
+				E1E71FEA2D802C580025F254 /* PodcastModel.swift */,
 				E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */,
 				E1E71FE02D8020DB0025F254 /* Persistence.swift */,
 				E1E71FE42D80211B0025F254 /* Assets.xcassets */,
@@ -237,7 +246,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E71FEB2D802C5A0025F254 /* PodcastModel.swift in Sources */,
 				E1E71FE92D8023B40025F254 /* PodJourney.xcdatamodeld in Sources */,
+				E1E71FED2D802C780025F254 /* iTunesAPIService.swift in Sources */,
+				E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */,
 				E1E71FE12D8020DB0025F254 /* Persistence.swift in Sources */,
 				E1E71FDF2D8020C30025F254 /* OnboardingView.swift in Sources */,
 				E1E71FDC2D8020750025F254 /* ContentView.swift in Sources */,
