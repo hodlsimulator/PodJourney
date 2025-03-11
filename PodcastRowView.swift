@@ -31,7 +31,13 @@ struct PodcastRowView: View {
                 }
                 .frame(width: 50, height: 50)
                 .cornerRadius(6)
+                // Print the URL inside onAppear, avoiding buildExpression errors
+                .onAppear {
+                    print("Thumbnail URL:", thumbnailUrl)
+                }
+
             } else {
+                // No valid URL, so display a placeholder
                 Image(systemName: "photo")
                     .resizable()
                     .frame(width: 50, height: 50)

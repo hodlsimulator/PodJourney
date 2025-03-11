@@ -11,9 +11,8 @@ struct OnboardingView: View {
     @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
     @State private var searchText: String = ""
     @FocusState private var isTextFieldFocused: Bool
-
-    // NEW: Add an @StateObject or @ObservedObject for your view model.
-    @StateObject private var viewModel = OnboardingViewModel() // NEW
+    
+    @StateObject private var viewModel = OnboardingViewModel()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -24,24 +23,16 @@ struct OnboardingView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .focused($isTextFieldFocused)
                 .onChange(of: searchText, initial: false) { newValue, oldValue in
-                    // newValue: the updated string
-                    // oldValue: the previous string
                     viewModel.searchForPodcasts(query: newValue)
                 }
 
-            // NEW: Display loading indicator
             if viewModel.isLoading {
                 ProgressView("Searching…")
             }
 
-            // NEW: Show results in a List
             List(viewModel.podcasts) { podcast in
-                VStack(alignment: .leading) {
-                    Text(podcast.collectionName)
-                        .font(.headline)
-                    Text(podcast.artistName)
-                        .font(.subheadline)
-                }
+                // Instead of a VStack, just reference your custom row
+                PodcastRowView(podcast: podcast)
             }
         }
         .padding()
@@ -49,7 +40,6 @@ struct OnboardingView: View {
         .contentShape(Rectangle())
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                // Slight delay ensures text field can accept focus
                 isTextFieldFocused = true
             }
         }
