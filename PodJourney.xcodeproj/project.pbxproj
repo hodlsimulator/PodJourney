@@ -11,7 +11,7 @@
 		E1E71FDF2D8020C30025F254 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FDE2D8020C30025F254 /* OnboardingView.swift */; };
 		E1E71FE12D8020DB0025F254 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FE02D8020DB0025F254 /* Persistence.swift */; };
 		E1E71FE32D8020F30025F254 /* PodJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */; };
-		E1E71FE52D80211B0025F254 /* Assets 5.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E71FE42D80211B0025F254 /* Assets 5.xcassets */; };
+		E1E71FE52D80211B0025F254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E71FE42D80211B0025F254 /* Assets.xcassets */; };
 		E1E71FE92D8023B40025F254 /* PodJourney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FE72D8023B40025F254 /* PodJourney.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		E1E71FDE2D8020C30025F254 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E1E71FE02D8020DB0025F254 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodJourneyApp.swift; sourceTree = "<group>"; };
-		E1E71FE42D80211B0025F254 /* Assets 5.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 5.xcassets"; sourceTree = "<group>"; };
+		E1E71FE42D80211B0025F254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1E71FE82D8023B40025F254 /* PodJourney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodJourney.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,8 @@
 				E1E71FDE2D8020C30025F254 /* OnboardingView.swift */,
 				E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */,
 				E1E71FE02D8020DB0025F254 /* Persistence.swift */,
-				E1E71FE42D80211B0025F254 /* Assets 5.xcassets */,
+				E1E71FE42D80211B0025F254 /* Assets.xcassets */,
+				E1E71FE72D8023B40025F254 /* PodJourney.xcdatamodeld */,
 				E1E71FE62D8021320025F254 /* Preview Content */,
 				E17F02E92D7F9C6100051CCB /* Products */,
 			);
@@ -95,7 +96,6 @@
 		E1E71FE62D8021320025F254 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				E1E71FE72D8023B40025F254 /* PodJourney.xcdatamodeld */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E71FE52D80211B0025F254 /* Assets 5.xcassets in Resources */,
+				E1E71FE52D80211B0025F254 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
