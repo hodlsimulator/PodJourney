@@ -18,6 +18,9 @@
 		E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */; };
 		E1E71FF12D8030960025F254 /* PodcastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FF02D8030950025F254 /* PodcastRowView.swift */; };
 		E1E71FF52D8035480025F254 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1E71FF42D8035480025F254 /* NukeUI */; };
+		E1E71FFC2D80DC0E0025F254 /* AlgoliaSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E71FFB2D80DC0B0025F254 /* AlgoliaSearchService.swift */; };
+		E1E720022D80E0FD0025F254 /* Search in Frameworks */ = {isa = PBXBuildFile; productRef = E1E720012D80E0FD0025F254 /* Search */; };
+		E1E720042D8102B50025F254 /* PodcastSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E720032D8102B30025F254 /* PodcastSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesAPIService.swift; sourceTree = "<group>"; };
 		E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		E1E71FF02D8030950025F254 /* PodcastRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastRowView.swift; sourceTree = "<group>"; };
+		E1E71FFB2D80DC0B0025F254 /* AlgoliaSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaSearchService.swift; sourceTree = "<group>"; };
+		E1E720032D8102B30025F254 /* PodcastSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E720022D80E0FD0025F254 /* Search in Frameworks */,
 				E1E71FF52D8035480025F254 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,11 +88,13 @@
 		E17F02DF2D7F9C6100051CCB = {
 			isa = PBXGroup;
 			children = (
+				E1E71FFB2D80DC0B0025F254 /* AlgoliaSearchService.swift */,
 				E1E71FDB2D8020750025F254 /* ContentView.swift */,
 				E1E71FEC2D802C750025F254 /* iTunesAPIService.swift */,
 				E1E71FDE2D8020C30025F254 /* OnboardingView.swift */,
 				E1E71FEE2D802C900025F254 /* OnboardingViewModel.swift */,
 				E1E71FEA2D802C580025F254 /* PodcastModel.swift */,
+				E1E720032D8102B30025F254 /* PodcastSearchViewModel.swift */,
 				E1E71FF02D8030950025F254 /* PodcastRowView.swift */,
 				E1E71FE22D8020F30025F254 /* PodJourneyApp.swift */,
 				E1E71FE02D8020DB0025F254 /* Persistence.swift */,
@@ -132,6 +140,7 @@
 			name = PodJourney;
 			packageProductDependencies = (
 				E1E71FF42D8035480025F254 /* NukeUI */,
+				E1E720012D80E0FD0025F254 /* Search */,
 			);
 			productName = PodJourney;
 			productReference = E17F02E82D7F9C6100051CCB /* PodJourney.app */;
@@ -212,6 +221,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E1E71FF32D8035480025F254 /* XCRemoteSwiftPackageReference "Nuke" */,
+				E1E720002D80E0FD0025F254 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E17F02E92D7F9C6100051CCB /* Products */;
@@ -257,9 +267,11 @@
 			files = (
 				E1E71FEB2D802C5A0025F254 /* PodcastModel.swift in Sources */,
 				E1E71FF12D8030960025F254 /* PodcastRowView.swift in Sources */,
+				E1E720042D8102B50025F254 /* PodcastSearchViewModel.swift in Sources */,
 				E1E71FE92D8023B40025F254 /* PodJourney.xcdatamodeld in Sources */,
 				E1E71FED2D802C780025F254 /* iTunesAPIService.swift in Sources */,
 				E1E71FEF2D802C910025F254 /* OnboardingViewModel.swift in Sources */,
+				E1E71FFC2D80DC0E0025F254 /* AlgoliaSearchService.swift in Sources */,
 				E1E71FE12D8020DB0025F254 /* Persistence.swift in Sources */,
 				E1E71FDF2D8020C30025F254 /* OnboardingView.swift in Sources */,
 				E1E71FDC2D8020750025F254 /* ContentView.swift in Sources */,
@@ -601,6 +613,14 @@
 				minimumVersion = 12.8.0;
 			};
 		};
+		E1E720002D80E0FD0025F254 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.15.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -608,6 +628,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E1E71FF32D8035480025F254 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = NukeUI;
+		};
+		E1E720012D80E0FD0025F254 /* Search */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E720002D80E0FD0025F254 /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Search;
 		};
 /* End XCSwiftPackageProductDependency section */
 
