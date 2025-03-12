@@ -11,45 +11,71 @@ struct OnboardingView: View {
     @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
     @State private var searchText: String = ""
     @FocusState private var isTextFieldFocused: Bool
-    
+
     @StateObject private var viewModel = OnboardingViewModel()
-    
+
     // We'll store our pending search task here, so we can cancel if the user keeps typing
     @State private var debounceTask: DispatchWorkItem?
-    // You can tweak this interval (in seconds)
     private let debounceInterval = 1.0
-    
+
     var body: some View {
-        return VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 16) {
             Text("Add your favourite podcasts!")
                 .font(.title)
-            
-            TextField("Search for podcasts", text: $searchText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .focused($isTextFieldFocused)
-                .onChange(of: searchText) { oldValue, newValue in
-                    print("Current typed text:", newValue)
-                    // Cancel any pending search
-                    debounceTask?.cancel()
-                    
-                    // Create a new work item that calls our search
-                    let task = DispatchWorkItem {
-                        viewModel.searchForPodcasts(query: newValue)
+
+            // HStack + Spacer so the text field can be centered.
+            HStack {
+                Spacer()
+
+                ZStack(alignment: .trailing) {
+                    TextField("Search for podcasts", text: $searchText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .focused($isTextFieldFocused)
+                        .onChange(of: searchText) { oldValue, newValue in
+                            print("Typed text changed from '\(oldValue)' to '\(newValue)'")
+
+                            // Cancel any pending search
+                            debounceTask?.cancel()
+
+                            // Create a new work item for the search
+                            let task = DispatchWorkItem {
+                                viewModel.searchForPodcasts(query: newValue)
+                            }
+                            // Schedule the search after a delay
+                            debounceTask = task
+                            DispatchQueue.main.asyncAfter(deadline: .now() + debounceInterval, execute: task)
+                        }
+
+                    // Show a plain 'delete all' button if there's any text
+                    if !searchText.isEmpty {
+                        Button {
+                            searchText = ""
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.secondary)
+                                // Increase padding so it’s easier to tap
+                                .padding(8)
+                        }
+                        // .plain style keeps the button background transparent
+                        .buttonStyle(.plain)
                     }
-                    // Store and schedule after 0.3s
-                    debounceTask = task
-                    DispatchQueue.main.asyncAfter(deadline: .now() + debounceInterval, execute: task)
                 }
-            
+                // Narrower text field, so it doesn’t span the entire screen
+                .frame(maxWidth: 300)
+
+                Spacer()
+            }
+
             if viewModel.isLoading {
                 ProgressView("Searching…")
             }
-            
+
             List(viewModel.podcasts) { podcast in
                 PodcastRowView(podcast: podcast)
             }
         }
         .padding()
+        // This expands the whole view in its container but keeps our text field limited.
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .contentShape(Rectangle())
         .onAppear {
@@ -61,7 +87,7 @@ struct OnboardingView: View {
             hideKeyboard()
         }
     }
-    
+
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
                                         to: nil, from: nil, for: nil)
